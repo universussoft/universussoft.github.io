@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Américo Rodrigues | Designer and Programmer</title>
+    <style>
+        /* Reset and basic settings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333333;
+            --success: #27ae60;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        /* Introduction section */
+        .intro {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .intro-text {
+            flex: 1;
+        }
+        
+        .intro-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .visual-box {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Services section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            height: 150px;
+            background-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Economic solutions section */
+        .economic-solutions {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .solutions-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .solution-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--success);
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .solution-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 30px;
+        }
+        
+        /* Benefits section */
+        .benefits {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .benefits-list {
+            margin-top: 40px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: var(--secondary);
+            font-size: 24px;
+        }
+        
+        /* Contact section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact-info {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .intro-content {
+                flex-direction: column;
+            }
+            
+            .visual-box {
+                width: 250px;
+                height: 250px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img">
+                    <img src="1.jpg" alt="Américo Rodrigues">
+                </div>
+                <h1>Américo Rodrigues</h1>
+                <p class="tagline">Designer and Programmer</p>
+                <p>Transforming complex processes into efficient solutions</p>
+                <div style="margin-top: 30px;">
+                    <a href="#contact" class="btn">Get in Touch</a>
+                    <a href="#economic-solutions" class="btn btn-secondary" style="margin-left: 15px;">Economic Solutions</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>Optimize Your Business Processes</h2>
+                    <p>In today's digital age, repetitive and time-consuming processes can be a major obstacle to your company's growth. As a Designer and Programmer, I offer customized solutions that automate tasks, eliminate redundancies, and increase productivity.</p>
+                    <p>Combining knowledge in design, programming, and engineering, I develop software and routines that adapt to your business's specific needs, providing efficiency and resource savings.</p>
+                    <a href="#services" class="btn" style="margin-top: 20px;">Discover My Services</a>
+                </div>
+                <div class="intro-visual">
+                    <div class="visual-box">
+                        Design + Programming + Engineering = Efficient Solutions
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Specialized Services</h2>
+            <p>I offer integrated solutions that combine design, programming, and engineering to optimize business processes.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <div class="service-content">
+                        <h3>Custom Software Development</h3>
+                        <p>Creation of tailor-made applications to automate specific processes in your company, eliminating repetitive tasks and reducing human errors.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <div class="service-content">
+                        <h3>Interface Design and User Experience</h3>
+                        <p>Development of intuitive and functional interfaces that facilitate interaction with complex systems, increasing team productivity.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <div class="service-content">
+                        <h3>Business Process Automation</h3>
+                        <p>Identification and implementation of solutions to automate workflows, from automated reports to system integration.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <div class="service-content">
+                        <h3>Process Analysis and Optimization</h3>
+                        <p>Detailed evaluation of existing processes in your company and proposal of improvements through customized technological solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Economic Solutions Section -->
+    <section class="economic-solutions" id="economic-solutions">
+        <div class="container">
+            <div class="solutions-intro">
+                <h2>Scalable and Economic Solutions</h2>
+                <p>I understand that each company has different needs and budgets. That's why I offer scalable solutions that grow with your business, without expensive and burdensome commitments. Small economic solutions that make big differences in the long run.</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">📋</div>
+                    <h3>Process Analysis</h3>
+                    <p>Identification of improvement points in your workflows without significant initial investment.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">🔧</div>
+                    <h3>Mini-automations</h3>
+                    <p>Specific solutions to automate a single repetitive task that consumes your team's time.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">📈</div>
+                    <h3>Automated Reports</h3>
+                    <p>Creation of simple systems to generate reports automatically, saving hours of manual work.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">🔄</div>
+                    <h3>Simple Integrations</h3>
+                    <p>Connection between two applications that your company already uses, eliminating work duplication.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3>Don't need a complex and expensive solution?</h3>
+                <p>Often, small optimizations make a significant difference. Let's identify together where I can help with economic and effective solutions.</p>
+                <a href="#contact" class="btn" style="margin-top: 20px;">Request Free Analysis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Advantages of My Solutions</h2>
+            <p>Investing in process automation and optimization brings tangible benefits to your business:</p>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏱️</div>
+                    <div>
+                        <h3>Time Savings</h3>
+                        <p>Significant reduction in time spent on repetitive tasks, allowing your team to focus on higher-value activities.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <div>
+                        <h3>Cost Reduction</h3>
+                        <p>Reduction of errors, resource optimization, and increased productivity result in significant financial savings.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <div>
+                        <h3>Scalability</h3>
+                        <p>Solutions designed to grow with your business, adapting to new needs and workloads.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <div>
+                        <h3>Accuracy and Consistency</h3>
+                        <p>Automated processes perform tasks with constant precision, eliminating variations and human errors.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚀</div>
+                    <div>
+                        <h3>Progressive Investment</h3>
+                        <p>Start with simple and economic solutions and evolve as your needs and budget allow.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">📊</div>
+                    <div>
+                        <h3>Fast ROI</h3>
+                        <p>Many solutions show return on investment within a few months through time and resource savings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Let's Transform Your Processes?</h2>
+            <p>Contact me for a free consultation and discover how I can help your company become more efficient.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>americo.rodrigues@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+351 966 512 552</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Portugal</span>
+                </div>
+            </div>
+            
+            <a href="mailto:americo.rodrigues@example.com" class="btn" style="margin-top: 40px;">Request Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Américo Rodrigues - Designer and Programmer. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
