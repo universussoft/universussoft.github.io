@@ -23,6 +23,11 @@
             --text: #333333;
             --success: #27ae60;
             --linkedin: #0077b5;
+            --github: #333;
+            --coffee: #ffdd00;
+            --spotify: #1DB954;
+            --steam: #171a21;
+            --freeware: #9b59b6;
         }
         
         body {
@@ -135,6 +140,71 @@
         
         .btn-linkedin:hover {
             background-color: #006097;
+        }
+        
+        .btn-github {
+            background-color: var(--github);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-github:hover {
+            background-color: #24292e;
+        }
+        
+        .btn-coffee {
+            background-color: var(--coffee);
+            color: #000;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+        }
+        
+        .btn-coffee:hover {
+            background-color: #ffc800;
+            color: #000;
+        }
+        
+        .btn-spotify {
+            background-color: var(--spotify);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-spotify:hover {
+            background-color: #1aa34a;
+        }
+        
+        .btn-steam {
+            background-color: var(--steam);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-steam:hover {
+            background-color: #0f1217;
+        }
+        
+        .btn-freeware {
+            background-color: var(--freeware);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            padding: 8px 20px;
+            margin-left: 10px;
+        }
+        
+        .btn-freeware:hover {
+            background-color: #8e44ad;
         }
         
         /* Introduction section */
@@ -265,6 +335,7 @@
         .project-header {
             padding: 25px 25px 15px;
             border-bottom: 1px solid #eee;
+            position: relative;
         }
         
         .project-icon {
@@ -317,13 +388,92 @@
             transition: color 0.3s ease;
         }
         
+        .project-link.github-link {
+            color: var(--github);
+        }
+        
         .project-link:hover {
             color: #006097;
+        }
+        
+        .project-link.github-link:hover {
+            color: #24292e;
         }
         
         .project-date {
             color: #777;
             font-size: 0.9rem;
+        }
+        
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        /* Support Section */
+        .support-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fdfbfb, #ebedee);
+            text-align: center;
+        }
+        
+        .support-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .support-intro {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .support-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .support-reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .support-reason {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .support-reason:hover {
+            transform: translateY(-5px);
+        }
+        
+        .support-reason-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            color: white;
+        }
+        
+        .support-platforms {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
         }
         
         /* Economic solutions section */
@@ -464,6 +614,22 @@
                 align-items: center;
                 gap: 20px;
             }
+            
+            .support-platforms {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .support-platforms .btn {
+                width: 250px;
+                justify-content: center;
+            }
+            
+            .project-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
         }
     </style>
 </head>
@@ -511,9 +677,14 @@
             <div class="section-intro">
                 <h2>Featured Projects</h2>
                 <p>Check out some of my recent work showcasing the integration of design, programming, and engineering solutions.</p>
-                <a href="https://www.linkedin.com/in/americomateusrodrigues/" target="_blank" class="btn btn-linkedin" style="margin-top: 15px;">
-                    <i class="fab fa-linkedin"></i> View More on LinkedIn
-                </a>
+                <div style="display: flex; gap: 15px; justify-content: center; margin-top: 15px; flex-wrap: wrap;">
+                    <a href="https://www.linkedin.com/in/americomateusrodrigues/" target="_blank" class="btn btn-linkedin">
+                        <i class="fab fa-linkedin"></i> View More on LinkedIn
+                    </a>
+                    <a href="https://github.com/universussoft" target="_blank" class="btn btn-github">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
             </div>
             
             <div class="projects-grid">
@@ -640,10 +811,114 @@
                         <span class="project-date">Aug 2024</span>
                     </div>
                 </div>
+                
+                <!-- Project 5 - PDF Joiner -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #e74c3c, #e67e22);">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>PDF Joiner</h3>
+                        <p>A free, open-source PDF merger that works 100% in your browser</p>
+                        <div style="margin-top: 10px;">
+                            <a href="https://universussoft.github.io/pdf-joiner/" target="_blank" class="btn btn-freeware">
+                                <i class="fas fa-external-link-alt"></i> Try Freeware App
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <p>Privacy-focused web application that allows users to merge multiple PDF files without uploading to any server. All processing happens locally in the browser using PDF-Lib library. No uploads, no server processing, 100% client-side.</p>
+                        
+                        <div class="project-tags">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PDF Processing</span>
+                            <span class="tag">Privacy-Focused</span>
+                            <span class="tag">Open Source</span>
+                            <span class="tag">Freeware</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-footer">
+                        <div class="project-links">
+                            <a href="https://github.com/universussoft/pdf-joiner" target="_blank" class="project-link github-link">
+                                <i class="fab fa-github"></i> View Source
+                            </a>
+                            <a href="https://universussoft.github.io/pdf-joiner/" target="_blank" class="project-link" style="color: var(--freeware);">
+                                <i class="fas fa-external-link-alt"></i> Use App
+                            </a>
+                        </div>
+                        <span class="project-date">Sep 2024</span>
+                    </div>
+                </div>
             </div>
             
             <div style="text-align: center; margin-top: 50px;">
                 <p>These projects demonstrate my ability to combine technical skills across multiple domains to create efficient, practical solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support My Work Section -->
+    <section class="support-section" id="support">
+        <div class="container">
+            <h2>Support My Work</h2>
+            
+            <div class="support-intro">
+                <p>I create free, open-source tools like <strong>PDF Joiner</strong> that help people without any cost. If you find my work useful and would like to support the development of more free applications in the future, consider buying me a coffee!</p>
+                
+                <p>Your support not only helps me create more useful tools but also fuels my other passions like creating music on Spotify and enjoying some relaxation time with Steam games.</p>
+            </div>
+            
+            <div class="support-content">
+                <div class="support-reasons">
+                    <div class="support-reason">
+                        <div class="support-reason-icon" style="background: linear-gradient(135deg, var(--coffee), #ff9500);">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <h3>More Free Tools</h3>
+                        <p>Your support enables me to spend more time developing useful, free applications that help people solve everyday problems.</p>
+                    </div>
+                    
+                    <div class="support-reason">
+                        <div class="support-reason-icon" style="background: linear-gradient(135deg, var(--spotify), #1ed760);">
+                            <i class="fab fa-spotify"></i>
+                        </div>
+                        <h3>Music Creation</h3>
+                        <p>I create music on Spotify as a creative outlet. Support helps me continue making and sharing my musical creations.</p>
+                    </div>
+                    
+                    <div class="support-reason">
+                        <div class="support-reason-icon" style="background: linear-gradient(135deg, var(--steam), #2a475e);">
+                            <i class="fab fa-steam"></i>
+                        </div>
+                        <h3>Gaming Inspiration</h3>
+                        <p>Games fuel creativity and problem-solving skills. They inspire innovative solutions in my development work.</p>
+                    </div>
+                </div>
+                
+                <div style="margin: 40px 0;">
+                    <a href="https://buymeacoffee.com/universussoft" target="_blank" class="btn btn-coffee" style="font-size: 1.1rem; padding: 15px 40px;">
+                        <i class="fas fa-coffee"></i> Buy Me a Coffee
+                    </a>
+                </div>
+                
+                <div class="support-platforms">
+                    <a href="https://buymeacoffee.com/universussoft" target="_blank" class="btn btn-coffee">
+                        <i class="fas fa-mug-hot"></i> Buy Me a Coffee
+                    </a>
+                    <a href="https://open.spotify.com/intl-pt/artist/3Af4GMSpI6DvszDaxGYX4h?si=fqkCMeIvQM-okHJeHMZbWA" target="_blank" class="btn btn-spotify">
+                        <i class="fab fa-spotify"></i> My Spotify Music
+                    </a>
+                    <a href="https://store.steampowered.com/search/?publisher=Universus%20Software" target="_blank" class="btn btn-steam">
+                        <i class="fab fa-steam"></i> Steam Games
+                    </a>
+                </div>
+                
+                <p style="margin-top: 30px; color: #666; font-style: italic;">
+                    Every contribution, no matter how small, is deeply appreciated and helps me continue creating!
+                </p>
             </div>
         </div>
     </section>
