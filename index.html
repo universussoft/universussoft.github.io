@@ -28,6 +28,7 @@
             --spotify: #1DB954;
             --steam: #171a21;
             --freeware: #9b59b6;
+            --bifocal: #4361ee;
         }
         
         body {
@@ -207,6 +208,20 @@
             background-color: #8e44ad;
         }
         
+        .btn-bifocal {
+            background-color: var(--bifocal);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            padding: 8px 20px;
+        }
+        
+        .btn-bifocal:hover {
+            background-color: #3a56d4;
+        }
+        
         /* Introduction section */
         .intro {
             padding: 80px 0;
@@ -325,6 +340,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
         }
         
         .project-card:hover {
@@ -352,6 +369,7 @@
         
         .project-content {
             padding: 20px 25px;
+            flex: 1;
         }
         
         .project-tags {
@@ -688,7 +706,49 @@
             </div>
             
             <div class="projects-grid">
-                <!-- Project 1 - 3D Modeling -->
+                <!-- Project 1 - BiFocal (New) -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #4361ee, #7209b7);">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>BiFocal: AI Decision Intelligence</h3>
+                        <p>See every angle before you decide — turn tough decisions into clear, confident choices</p>
+                        <div style="margin-top: 10px;">
+                            <a href="https://bifocal.lovable.app" target="_blank" class="btn btn-bifocal">
+                                <i class="fas fa-external-link-alt"></i> Try BiFocal
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <p>BiFocal is an AI-powered decision intelligence platform that transforms how you analyze complex choices. Whether weighing a career move, making a business investment, or navigating a personal crossroads, BiFocal brings structure and depth to your thinking.</p>
+                        
+                        <p><strong>Features include:</strong> Weighted impact charts, confidence scoring, AI persona debates that argue both sides, ripple effect mapping with consequence chains, and Decision Forest — an interactive tree of 25-40 future branches.</p>
+                        
+                        <div class="project-tags">
+                            <span class="tag">AI Decision Intelligence</span>
+                            <span class="tag">Web App</span>
+                            <span class="tag">Strategic Planning</span>
+                            <span class="tag">Cognitive Tech</span>
+                            <span class="tag">Productivity Tools</span>
+                            <span class="tag">Future Thinking</span>
+                            <span class="tag">AI Debate</span>
+                            <span class="tag">Decision Forest</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-footer">
+                        <div class="project-links">
+                            <a href="https://bifocal.lovable.app" target="_blank" class="project-link" style="color: var(--bifocal);">
+                                <i class="fas fa-external-link-alt"></i> bifocal.lovable.app
+                            </a>
+                        </div>
+                        <span class="project-date">2024</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 - 3D Piping System Design -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon" style="background: linear-gradient(135deg, #4A00E0, #8E2DE2);">
@@ -719,7 +779,7 @@
                     </div>
                 </div>
                 
-                <!-- Project 2 - Web Development -->
+                <!-- Project 3 - Interactive Web Visualization -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon" style="background: linear-gradient(135deg, #3498db, #2ecc71);">
@@ -750,7 +810,7 @@
                     </div>
                 </div>
                 
-                <!-- Project 3 - C# Development -->
+                <!-- Project 4 - AI-Powered Productivity Tool -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon" style="background: linear-gradient(135deg, #9B59B6, #E74C3C);">
@@ -781,7 +841,7 @@
                     </div>
                 </div>
                 
-                <!-- Project 4 - AutoCAD Plugin -->
+                <!-- Project 5 - AutoCAD Plugin Development -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon" style="background: linear-gradient(135deg, #E67E22, #F1C40F);">
@@ -812,7 +872,7 @@
                     </div>
                 </div>
                 
-                <!-- Project 5 - PDF Joiner -->
+                <!-- Project 6 - PDF Joiner -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon" style="background: linear-gradient(135deg, #e74c3c, #e67e22);">
@@ -866,7 +926,7 @@
             <h2>Support My Work</h2>
             
             <div class="support-intro">
-                <p>I create free, open-source tools like <strong>PDF Joiner</strong> that help people without any cost. If you find my work useful and would like to support the development of more free applications in the future, consider buying me a coffee!</p>
+                <p>I create free, open-source tools like <strong>PDF Joiner</strong> and innovative AI platforms like <strong>BiFocal</strong> that help people make better decisions without cost barriers. If you find my work useful and would like to support the development of more free applications in the future, consider buying me a coffee!</p>
                 
                 <p>Your support not only helps me create more useful tools but also fuels my other passions like creating music on Spotify and enjoying some relaxation time with Steam games.</p>
             </div>
